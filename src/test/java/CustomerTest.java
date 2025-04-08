@@ -25,4 +25,17 @@ public class CustomerTest {
         });
         assertEquals("must be > 3 chars", e.getMessage());
     }
+    @Test
+    void testLastName() throws Exception{
+        Customer customer = new Customer();
+        assertEquals("John" , customer.addLastName("TheMan"));
+    }
+    @Test
+    void testLastNameFail(){
+        Customer customer = new Customer();
+        Exception e = assertThrows(Exception.class, () -> {
+            customer.addLastName(":(");
+        });
+        assertEquals("must be > 3 chars", e.getMessage());
+    }
 }
