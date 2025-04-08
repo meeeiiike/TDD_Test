@@ -55,4 +55,18 @@ public class CustomerTest {
         assertEquals("length must be between 8-12", e.getMessage());
     }
 
+    @Test
+    void testAddress() throws IllegalArgumentException{
+        Customer customer = new Customer();
+        assertEquals("10-40Chars" , customer.addAddress("10-40Chars"));
+    }
+    @Test
+    void testAddressFail(){
+        Customer customer = new Customer();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> {
+            customer.addAddress(":(");
+        });
+        assertEquals("length must be between 10-40", e.getMessage());
+    }
+
 }
