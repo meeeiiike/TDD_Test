@@ -23,4 +23,9 @@ public class Customer {
         }
         return id;
     }
+
+    public String addAddress(String address) throws IllegalArgumentException {
+
+        return address;
+    }
 }
