@@ -1,9 +1,11 @@
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class CustomerTest {
-    @BeforeEach
-    void setup(){
-        Customer customer = new Customer;
-    }
 
+    @Test
+    void testFirstName(){
+        Customer customer = new Customer();
+        assertEquals("John" , customer.addFirstName("John"));
+    }
 }
