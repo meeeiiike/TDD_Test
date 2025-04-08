@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CustomerTest {
 
+    // adding comment to push project with jacococ to git hub
     @BeforeEach
     void setup(){
         Customer customer = new Customer();
