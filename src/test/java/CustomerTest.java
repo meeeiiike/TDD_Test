@@ -52,7 +52,7 @@ public class CustomerTest {
         Exception e = assertThrows(IllegalArgumentException.class, () -> {
             customer.addID(":(");
         });
-        assertEquals("must be > 3 chars", e.getMessage());
+        assertEquals("length must be between 8-12", e.getMessage());
     }
 
 }

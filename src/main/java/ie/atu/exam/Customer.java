@@ -16,8 +16,11 @@ public class Customer {
         return lName;
     }
 
-    public String addID(String id) {
+    public String addID(String id) throws IllegalArgumentException{
+        if(id.length() < 8 || id.length() >12){
+            throw new IllegalArgumentException("length must be between 8-12");
 
+        }
         return id;
     }
 }
