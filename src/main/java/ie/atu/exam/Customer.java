@@ -9,4 +9,10 @@ public class Customer {
         }
         return fName;
     }
+    public String addLastName(String lName) throws Exception{
+        if(lName.length()< 3){
+            throw new Exception("must be > 3 chars");
+        }
+        return lName;
+    }
 }
