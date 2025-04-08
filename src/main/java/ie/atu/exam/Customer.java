@@ -19,8 +19,14 @@ public class Customer {
     public String addID(String id) throws IllegalArgumentException{
         if(id.length() < 8 || id.length() >12){
             throw new IllegalArgumentException("length must be between 8-12");
-
         }
         return id;
+    }
+
+    public String addAddress(String address) throws IllegalArgumentException {
+        if(address.length() < 10 || address.length() >40){
+            throw new IllegalArgumentException("length must be between 10-40");
+        }
+        return address;
     }
 }
