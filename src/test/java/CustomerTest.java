@@ -12,30 +12,47 @@ public class CustomerTest {
     void setup(){
         Customer customer = new Customer();
     }
+
     @Test
-    void testFirstName() throws Exception{
+    void testFirstName() throws IllegalArgumentException {
         Customer customer = new Customer();
         assertEquals("John" , customer.addFirstName("John"));
     }
     @Test
     void testFirstNameFail(){
         Customer customer = new Customer();
-        Exception e = assertThrows(Exception.class, () -> {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> {
             customer.addFirstName(":(");
         });
         assertEquals("must be > 3 chars", e.getMessage());
     }
+
     @Test
-    void testLastName() throws Exception{
+    void testLastName() throws IllegalArgumentException{
         Customer customer = new Customer();
         assertEquals("TheMan" , customer.addLastName("TheMan"));
     }
     @Test
     void testLastNameFail(){
         Customer customer = new Customer();
-        Exception e = assertThrows(Exception.class, () -> {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> {
             customer.addLastName(":(");
         });
         assertEquals("must be > 3 chars", e.getMessage());
     }
+
+    @Test
+    void testID() throws IllegalArgumentException{
+        Customer customer = new Customer();
+        assertEquals("8-12Chars" , customer.addID("8-12Chars"));
+    }
+    @Test
+    void testIDFail(){
+        Customer customer = new Customer();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> {
+            customer.addID(":(");
+        });
+        assertEquals("must be > 3 chars", e.getMessage());
+    }
+
 }
